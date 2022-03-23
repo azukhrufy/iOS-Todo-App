@@ -13,6 +13,7 @@
 		04B28B6527EB7FA0001930BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B28B6427EB7FA0001930BA /* Preview Assets.xcassets */; };
 		04B28B6727EB7FA0001930BA /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B6627EB7FA0001930BA /* Persistence.swift */; };
 		04B28B6A27EB7FA1001930BA /* ToDo_App.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B6827EB7FA1001930BA /* ToDo_App.xcdatamodeld */; };
+		04B28B7227EB8177001930BA /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B7127EB8177001930BA /* AddTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		04B28B6427EB7FA0001930BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04B28B6627EB7FA0001930BA /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		04B28B6927EB7FA1001930BA /* ToDo_App.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo_App.xcdatamodel; sourceTree = "<group>"; };
+		04B28B7127EB8177001930BA /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */,
-				04B28B5F27EB7F9E001930BA /* ContentView.swift */,
+				04B28B7027EB8134001930BA /* View */,
 				04B28B6127EB7FA0001930BA /* Assets.xcassets */,
 				04B28B6627EB7FA0001930BA /* Persistence.swift */,
 				04B28B6827EB7FA1001930BA /* ToDo_App.xcdatamodeld */,
@@ -71,6 +73,15 @@
 				04B28B6427EB7FA0001930BA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04B28B7027EB8134001930BA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04B28B5F27EB7F9E001930BA /* ContentView.swift */,
+				04B28B7127EB8177001930BA /* AddTodoView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 				04B28B6027EB7F9E001930BA /* ContentView.swift in Sources */,
 				04B28B5E27EB7F9E001930BA /* ToDo_AppApp.swift in Sources */,
 				04B28B6A27EB7FA1001930BA /* ToDo_App.xcdatamodeld in Sources */,
+				04B28B7227EB8177001930BA /* AddTodoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
