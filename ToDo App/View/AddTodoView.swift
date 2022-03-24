@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddTodoView: View {
     // Properties
-    
+    @Environment(\.managedObjectContext) var manageObjectContext // connecting to another view
     @Environment(\.presentationMode) var presentationMode
     
     
@@ -17,6 +17,10 @@ struct AddTodoView: View {
     @State private var priority: String = "Normal"
     
     let priorities = ["High","Normal","Low"]
+    
+    @State private var errorShowing: Bool = false
+    @State private var errorTitle: String = ""
+    @State private var errorMessage: String = ""
     
     //Body
     var body: some View {
@@ -36,7 +40,25 @@ struct AddTodoView: View {
                     
                     // Save Button
                     Button(action: {
-                        print("Save a new Todo Item")
+                        if self.name != ""{
+                            let todo = Todo(context: self.manageObjectContext)
+                            todo.name = self.name
+                            todo.priority = self.priority
+                            
+                            do{
+                                try self.manageObjectContext.save()
+                                print("New Todo: \(todo.name ?? String())", "Prioriy: \(todo.priority ?? String())")
+                            }catch{
+                                print(error)
+                            }
+                        }else{
+                            self.errorShowing = true
+                            self.errorTitle = "Invalid Name"
+                            self.errorMessage = "Make sure you fill the todo item"
+                            return
+                        }
+                        self.presentationMode.wrappedValue.dismiss()
+                        
                     }) {
                         Text("Save")
                     } // Save Button
@@ -52,6 +74,9 @@ struct AddTodoView: View {
                     Image(systemName: "xmark")
                 }
             )
+            .alert(isPresented: $errorShowing){
+                Alert(title: Text(errorTitle), message: Text(errorMessage), dismissButton: .default(Text("OK")))
+            }
         }//Navigation
     }
 }
@@ -62,5 +87,6 @@ struct AddTodoView_Previews: PreviewProvider {
     static var previews: some View {
         AddTodoView()
             .previewDevice("iPhone 11 Pro")
+.previewInterfaceOrientation(.portrait)
     }
 }

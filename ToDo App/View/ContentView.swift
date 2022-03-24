@@ -10,6 +10,8 @@ import CoreData
 
 struct ContentView: View {
     // Properties
+    
+    @Environment(\.managedObjectContext) var manageObjectContext //for access internal storage for save todo item
     @State private var showingAddTodoView: Bool = false
     
     // Body
@@ -26,7 +28,7 @@ struct ContentView: View {
                 Image(systemName: "plus")
             } // add button
             .sheet(isPresented: $showingAddTodoView){
-                AddTodoView()
+                AddTodoView().environment(\.managedObjectContext,self.manageObjectContext)
             }
             )
         }// Navigation
@@ -38,5 +40,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
             .previewDevice("iPhone 11 Pro")
+.previewInterfaceOrientation(.portrait)
     }
 }
