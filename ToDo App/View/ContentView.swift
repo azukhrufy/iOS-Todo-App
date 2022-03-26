@@ -22,41 +22,40 @@ struct ContentView: View {
     // Body
     var body: some View {
         NavigationView{
-            List{
-                ForEach(self.todos, id: \.self){
-                    todo in NavigationLink(destination: EditTodoView(newName: todo.name ?? "unknown",newPriority: todo.priority ?? "Unknown")){
-                        HStack{
-                            Text(todo.name ?? "Unknown")
-                            Spacer()
-                            Text(todo.priority ?? "Unknown")
+            ZStack {
+                List{
+                    ForEach(self.todos, id: \.self){
+                        todo in NavigationLink(destination: EditTodoView(newName: todo.name ?? "unknown",newPriority: todo.priority ?? "Unknown")){
+                            HStack{
+                                Text(todo.name ?? "Unknown")
+                                Spacer()
+                                Text(todo.priority ?? "Unknown")
+                            }
                         }
-                    }
+                    }//foreach
+                    .onDelete(perform: deleteTodo)
                     
-                    
-                    
-                }//foreach
-                .onDelete(perform: deleteTodo)
-//                .onTapGesture {
-//                    self.showingEditTodoView.toggle()
-//                }
-                
-            } // List
-            .navigationBarTitle("Todo", displayMode: .inline)
-            .navigationBarItems(
-                leading: EditButton(),
-                trailing: Button(action: {
-                //Show act todo view
-                self.showingAddTodoView.toggle()
-            }){
-                Image(systemName: "plus")
-            } // add button
-            .sheet(isPresented: $showingAddTodoView){
-                AddTodoView().environment(\.managedObjectContext,self.manageObjectContext)
-            }
+                } // List
+                .navigationBarTitle("Todo", displayMode: .inline)
+                .navigationBarItems(
+                    leading: EditButton(),
+                    trailing: Button(action: {
+                    //Show act todo view
+                    self.showingAddTodoView.toggle()
+                }){
+                    Image(systemName: "plus")
+                } // add button
+                .sheet(isPresented: $showingAddTodoView){
+                    AddTodoView().environment(\.managedObjectContext,self.manageObjectContext)
+                }
             )
-//            .sheet(isPresented: $showingEditTodoView){
-//                EditTodoView()
-//            }
+                
+                //No Todo Item
+                if todos.count == 0{
+                    EmptyListView()
+                    
+                }
+            }// Zstack
         }// Navigation
         
     }
