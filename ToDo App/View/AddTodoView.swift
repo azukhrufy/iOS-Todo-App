@@ -26,9 +26,13 @@ struct AddTodoView: View {
     var body: some View {
         NavigationView{
             VStack{
-                Form {
+                VStack(alignment: .leading, spacing: 20) {
                     //Todo Name
                     TextField("Todo", text: $name)
+                        .padding()
+                        .background(Color(UIColor.tertiarySystemFill))
+                        .cornerRadius(9)
+                        .font(.system(size: 24,weight: .bold, design: .default))
                     
                     //Todo Priority
                     Picker("Priority", selection: $priority){
@@ -47,7 +51,6 @@ struct AddTodoView: View {
                             
                             do{
                                 try self.manageObjectContext.save()
-                                print("New Todo: \(todo.name ?? String())", "Prioriy: \(todo.priority ?? String())")
                             }catch{
                                 print(error)
                             }
@@ -61,8 +64,16 @@ struct AddTodoView: View {
                         
                     }) {
                         Text("Save")
+                            .font(.system(size: 24, weight: .bold, design: .default))
+                            .padding()
+                            .frame(minWidth: 0, maxWidth: .infinity)
+                            .background(Color.blue)
+                            .cornerRadius(9)
+                            .foregroundColor(Color.white)
                     } // Save Button
-                } //Form
+                } //VStack
+                .padding(.horizontal)
+                .padding(.vertical, 30)
                 
                 Spacer()
             } //Stack
