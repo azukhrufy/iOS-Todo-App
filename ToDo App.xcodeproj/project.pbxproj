@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0478EACC27FD7F8F001ECD8C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EACB27FD7F8F001ECD8C /* SettingsView.swift */; };
+		0478EACE27FD8C17001ECD8C /* FormRowStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EACD27FD8C17001ECD8C /* FormRowStaticView.swift */; };
+		0478EAD027FF71E8001ECD8C /* FormRowLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EACF27FF71E8001ECD8C /* FormRowLinkView.swift */; };
+		0478EAD327FF7877001ECD8C /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EAD227FF7877001ECD8C /* ThemeModel.swift */; };
+		0478EAD527FF78F4001ECD8C /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EAD427FF78F4001ECD8C /* ThemeData.swift */; };
+		0478EAD727FF7A4E001ECD8C /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EAD627FF7A4E001ECD8C /* ThemeSettings.swift */; };
 		04B28B5E27EB7F9E001930BA /* ToDo_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */; };
 		04B28B6027EB7F9E001930BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B5F27EB7F9E001930BA /* ContentView.swift */; };
 		04B28B6227EB7FA0001930BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B28B6127EB7FA0001930BA /* Assets.xcassets */; };
@@ -21,6 +27,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0478EACB27FD7F8F001ECD8C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0478EACD27FD8C17001ECD8C /* FormRowStaticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowStaticView.swift; sourceTree = "<group>"; };
+		0478EACF27FF71E8001ECD8C /* FormRowLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRowLinkView.swift; sourceTree = "<group>"; };
+		0478EAD227FF7877001ECD8C /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
+		0478EAD427FF78F4001ECD8C /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
+		0478EAD627FF7A4E001ECD8C /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
 		04B28B5A27EB7F9E001930BA /* ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_AppApp.swift; sourceTree = "<group>"; };
 		04B28B5F27EB7F9E001930BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +59,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0478EAD127FF7856001ECD8C /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0478EAD227FF7877001ECD8C /* ThemeModel.swift */,
+				0478EAD427FF78F4001ECD8C /* ThemeData.swift */,
+				0478EAD627FF7A4E001ECD8C /* ThemeSettings.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
 		04B28B5127EB7F9D001930BA = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +88,7 @@
 		04B28B5C27EB7F9E001930BA /* ToDo App */ = {
 			isa = PBXGroup;
 			children = (
+				0478EAD127FF7856001ECD8C /* Theme */,
 				04EFA31D27EFCA0100566E64 /* ToDo-App-Info.plist */,
 				04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */,
 				04EFA31E27EFCA5D00566E64 /* LaunchScreen.storyboard */,
@@ -94,6 +117,9 @@
 				04B28B7127EB8177001930BA /* AddTodoView.swift */,
 				04CE1A6927ECDA070072C79B /* EditTodoView.swift */,
 				04EFA32027EFCFF400566E64 /* EmptyListView.swift */,
+				0478EACB27FD7F8F001ECD8C /* SettingsView.swift */,
+				0478EACD27FD8C17001ECD8C /* FormRowStaticView.swift */,
+				0478EACF27FF71E8001ECD8C /* FormRowLinkView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -170,12 +196,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				04B28B6727EB7FA0001930BA /* Persistence.swift in Sources */,
+				0478EAD527FF78F4001ECD8C /* ThemeData.swift in Sources */,
+				0478EACE27FD8C17001ECD8C /* FormRowStaticView.swift in Sources */,
 				04B28B6027EB7F9E001930BA /* ContentView.swift in Sources */,
+				0478EAD327FF7877001ECD8C /* ThemeModel.swift in Sources */,
 				04B28B5E27EB7F9E001930BA /* ToDo_AppApp.swift in Sources */,
+				0478EACC27FD7F8F001ECD8C /* SettingsView.swift in Sources */,
 				04B28B6A27EB7FA1001930BA /* ToDo_App.xcdatamodeld in Sources */,
 				04EFA32127EFCFF400566E64 /* EmptyListView.swift in Sources */,
+				0478EAD027FF71E8001ECD8C /* FormRowLinkView.swift in Sources */,
 				04CE1A6827ECCF4F0072C79B /* MyAppDelegate.swift in Sources */,
 				04B28B7227EB8177001930BA /* AddTodoView.swift in Sources */,
+				0478EAD727FF7A4E001ECD8C /* ThemeSettings.swift in Sources */,
 				04CE1A6A27ECDA070072C79B /* EditTodoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -17,6 +17,11 @@ struct ContentView: View {
     @State private var showingAddTodoView: Bool = false
     @State private var showingEditTodoView: Bool = false
     @State private var animatingButton: Bool = false
+    @State private var showingSettingsView: Bool = false
+    
+    //THEME
+    @ObservedObject var theme = ThemeSettings.shared
+    var themes: [Theme] = themeData
     
     
     @State var selectedTodo: Todo?
@@ -29,18 +34,41 @@ struct ContentView: View {
                     ForEach(self.todos, id: \.self){
                         todo in NavigationLink(destination: EditTodoView(newName: todo.name ?? "unknown",newPriority: todo.priority ?? "Unknown")){
                             HStack{
+                                Circle()
+                                    .frame(width: 12, height: 12, alignment: .center)
+                                    .foregroundColor(self.colorize(priority: todo.priority ?? "Normal"))
                                 Text(todo.name ?? "Unknown")
+                                    .fontWeight(.semibold)
                                 Spacer()
-                                Text(todo.priority ?? "Unknown")
-                            }
-                        }
+                                Text(todo.priority ?? "Unkown")
+                                  .font(.footnote)
+                                  .foregroundColor(Color(UIColor.systemGray2))
+                                  .padding(3)
+                                  .frame(minWidth: 62)
+                                  .overlay(
+                                    Capsule().stroke(Color(UIColor.systemGray2), lineWidth: 0.75)
+                                  )
+                                
+                            }// HStack
+                            .padding(.vertical, 5)
+                        }// Navigation Link
                     }//foreach
                     .onDelete(perform: deleteTodo)
                     
                 } // List
                 .navigationBarTitle("Todo", displayMode: .inline)
                 .navigationBarItems(
-                    leading: EditButton()
+                    leading: EditButton().accentColor(themes[self.theme.themeSettings].themeColor),
+                    trailing: Button(action : {
+                        self.showingSettingsView.toggle()
+                    }){
+                        Image(systemName: "paintbrush")
+                    }
+                        .accentColor(themes[self.theme.themeSettings].themeColor)
+                        .sheet(isPresented: $showingSettingsView){
+                            SettingsView()
+                        }
+                        
                 )
                 
                 //No Todo Item
@@ -55,10 +83,11 @@ struct ContentView: View {
                 ZStack {
                     Group{
                         Circle()
-                            .fill(Color.blue)
+                            .fill(themes[self.theme.themeSettings].themeColor)
                             .opacity(self.animatingButton ? 0.2 : 0)
 //                            .scaleEffect(self.animatingButton ? 1 : 0)
                             .frame(width: 68, height: 68, alignment: .center)
+                            
 //                        Circle()
 //                            .fill(Color.blue)
 //                            .opacity(self.animatingButton ? 0.15 : 0)
@@ -74,6 +103,7 @@ struct ContentView: View {
                             .background(Circle().fill(Color.white))
                             .frame(width: 48, height: 48, alignment: .center)
                     }//button
+                    .accentColor(themes[self.theme.themeSettings].themeColor)
                     .onAppear(perform: {
                         self.animatingButton.toggle()
                     })
@@ -97,6 +127,18 @@ struct ContentView: View {
                 print(error)
             }
         }
+    }
+    
+    private func colorize(priority: String) -> Color{
+        var color: Color = Color.gray
+        if priority == "High"{
+            color = Color.red
+        }else if priority == "Normal"{
+            color =  Color.blue
+        }else if priority == "Low"{
+            color =  Color.green
+        }
+        return color
     }
 }
 
