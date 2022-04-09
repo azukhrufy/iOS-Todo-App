@@ -31,10 +31,36 @@ struct SettingsView: View {
                             .frame(width: 10, height: 10)
                             .foregroundColor(themes[self.theme.themeSettings].themeColor)
                     }){
-                        
+                        List{
+                            ForEach(themes,id: \.id) { item in
+                                Button(action: {
+                                    self.theme.themeSettings = item.id
+                                    UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                    self.isThemeChanged.toggle()
+                                }) {
+                                    HStack{
+                                        Image(systemName: "circle.fill")
+                                            .resizable()
+                                            .frame(width: 10, height: 10, alignment: .center)
+                                            .foregroundColor(item.themeColor)
+                                        Text(item.themeName)
+                                            .accentColor(Color.gray)
+                                    }//: HStack
+                                }//: button
+                                .accentColor(Color.primary)
+                            }
+                            
+                        }//: List
                         
                     }//: Section Theme
                     .padding(.vertical, 3)
+                    .alert(isPresented: $isThemeChanged){
+                        Alert(
+                            title: Text("Success"),
+                            message: Text("The App Has Changed theme to \(themes[self.theme.themeSettings].themeName)!"),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
                     
                     //MARK: SECTION LINK
                     Section(header: Text("About Me")){
