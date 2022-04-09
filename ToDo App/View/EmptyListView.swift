@@ -9,19 +9,27 @@ import SwiftUI
 
 struct EmptyListView: View {
     // Properties
+    var illustrations: [Illustration] = illustrationData
     @State private var isAnimated: Bool = false
+    
+    @ObservedObject var theme = ThemeSettings.shared
+    var themes: [Theme] = themeData
     
     var body: some View {
         ZStack {
             VStack(alignment: .center, spacing: 20) {
-                Image("undraw_searching_re_3ra9")
+                let icon = illustrations.randomElement() ?? self.illustrations[0]
+                Image(icon.images)
+                    .renderingMode(.template)
                     .resizable()
                     .scaledToFit()
-                    .frame(alignment: .center)
+                    .frame(minWidth: 256, idealWidth: 280, maxWidth: 360, minHeight: 256, idealHeight: 280, maxHeight: 360, alignment: .center)
                     .layoutPriority(1)
+                    .foregroundColor(themes[self.theme.themeSettings].themeColor)
                 Text("Use your time wisely")
                     .layoutPriority(0.5)
                     .font(.system(.headline, design: .rounded))
+                    .foregroundColor(themes[self.theme.themeSettings].themeColor)
             }// vstack
             .padding(.horizontal)
             .opacity(isAnimated ? 1 : 0)

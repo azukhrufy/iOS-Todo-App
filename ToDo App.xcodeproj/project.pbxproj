@@ -13,6 +13,8 @@
 		0478EAD327FF7877001ECD8C /* ThemeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EAD227FF7877001ECD8C /* ThemeModel.swift */; };
 		0478EAD527FF78F4001ECD8C /* ThemeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EAD427FF78F4001ECD8C /* ThemeData.swift */; };
 		0478EAD727FF7A4E001ECD8C /* ThemeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0478EAD627FF7A4E001ECD8C /* ThemeSettings.swift */; };
+		047D714C2801C72600846DE7 /* IllustrationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D714B2801C72600846DE7 /* IllustrationModel.swift */; };
+		047D714F2801C7BC00846DE7 /* IllustrationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D714E2801C7BC00846DE7 /* IllustrationData.swift */; };
 		04B28B5E27EB7F9E001930BA /* ToDo_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */; };
 		04B28B6027EB7F9E001930BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B28B5F27EB7F9E001930BA /* ContentView.swift */; };
 		04B28B6227EB7FA0001930BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04B28B6127EB7FA0001930BA /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		0478EAD227FF7877001ECD8C /* ThemeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeModel.swift; sourceTree = "<group>"; };
 		0478EAD427FF78F4001ECD8C /* ThemeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeData.swift; sourceTree = "<group>"; };
 		0478EAD627FF7A4E001ECD8C /* ThemeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettings.swift; sourceTree = "<group>"; };
+		047D714B2801C72600846DE7 /* IllustrationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustrationModel.swift; sourceTree = "<group>"; };
+		047D714E2801C7BC00846DE7 /* IllustrationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IllustrationData.swift; sourceTree = "<group>"; };
 		04B28B5A27EB7F9E001930BA /* ToDo App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ToDo App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_AppApp.swift; sourceTree = "<group>"; };
 		04B28B5F27EB7F9E001930BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,15 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		047D714D2801C73300846DE7 /* Illustration */ = {
+			isa = PBXGroup;
+			children = (
+				047D714B2801C72600846DE7 /* IllustrationModel.swift */,
+				047D714E2801C7BC00846DE7 /* IllustrationData.swift */,
+			);
+			path = Illustration;
+			sourceTree = "<group>";
+		};
 		04B28B5127EB7F9D001930BA = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +101,7 @@
 		04B28B5C27EB7F9E001930BA /* ToDo App */ = {
 			isa = PBXGroup;
 			children = (
+				047D714D2801C73300846DE7 /* Illustration */,
 				0478EAD127FF7856001ECD8C /* Theme */,
 				04EFA31D27EFCA0100566E64 /* ToDo-App-Info.plist */,
 				04B28B5D27EB7F9E001930BA /* ToDo_AppApp.swift */,
@@ -200,8 +214,10 @@
 				0478EACE27FD8C17001ECD8C /* FormRowStaticView.swift in Sources */,
 				04B28B6027EB7F9E001930BA /* ContentView.swift in Sources */,
 				0478EAD327FF7877001ECD8C /* ThemeModel.swift in Sources */,
+				047D714F2801C7BC00846DE7 /* IllustrationData.swift in Sources */,
 				04B28B5E27EB7F9E001930BA /* ToDo_AppApp.swift in Sources */,
 				0478EACC27FD7F8F001ECD8C /* SettingsView.swift in Sources */,
+				047D714C2801C72600846DE7 /* IllustrationModel.swift in Sources */,
 				04B28B6A27EB7FA1001930BA /* ToDo_App.xcdatamodeld in Sources */,
 				04EFA32127EFCFF400566E64 /* EmptyListView.swift in Sources */,
 				0478EAD027FF71E8001ECD8C /* FormRowLinkView.swift in Sources */,
