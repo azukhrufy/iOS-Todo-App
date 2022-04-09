@@ -65,7 +65,8 @@ struct SettingsView: View {
                     //MARK: SECTION LINK
                     Section(header: Text("About Me")){
                         FormRowLinkView(icon: "globe", color: Color.pink, text: "website", link: "https://azukhrufy-portfolio.vercel.app")
-                        FormRowLinkView(icon: "users", color: Color.green, text: "github", link: "https://github/azukhrufy")
+                        FormRowLinkView(icon: "person", color: Color.green, text: "github", link: "https://github/azukhrufy")
+                        FormRowLinkView(icon: "person.fill", color: Color.green, text: "gitlab", link: "https://gitlab/azukhrufy")
                     }//: Section Link
                     .padding(.vertical, 3)
                     
