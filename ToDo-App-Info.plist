@@ -5,7 +5,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIImageName</key>
-		<string>TodoImages</string>
+		<string>Images</string>
 	</dict>
 </dict>
 </plist>

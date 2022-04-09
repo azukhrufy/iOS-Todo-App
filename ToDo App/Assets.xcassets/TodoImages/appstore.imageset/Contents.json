@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "undraw_Next_tasks_re_5eyy.png",
+      "filename" : "appstore.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "undraw_Next_tasks_re_5eyy@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "undraw_Next_tasks_re_5eyy@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
